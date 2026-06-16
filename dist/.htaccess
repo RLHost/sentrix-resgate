@@ -1,0 +1,75 @@
+# ----------------------------------------------------------------------
+# 1. Configurações de Segurança e Cabeçalhos (Security Headers)
+# ----------------------------------------------------------------------
+
+# Evita o clickjacking permitindo frames apenas do mesmo domínio
+Header set X-Frame-Options "SAMEORIGIN"
+
+# Evita MIME Sniffing forçando o navegador a seguir os Content-Types declarados
+Header set X-Content-Type-Options "nosniff"
+
+# Proteção contra XSS ativa (bloqueia renderização caso detecte ataque)
+Header set X-XSS-Protection "1; mode=block"
+
+# Referrer Policy segura
+Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Oculta assinaturas do servidor Apache (caso habilitado na config global)
+ServerSignature Off
+
+# Impede listagem de diretórios (Directory Browsing)
+Options -Indexes
+
+# ----------------------------------------------------------------------
+# 2. Redirecionamentos e URLs Limpas (Rewrite Engine)
+# ----------------------------------------------------------------------
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Forçar HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Rotas SPA (React router fallback): envia requisições não físicas para o index.html
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 3. Compactação GZIP para Performance
+# ----------------------------------------------------------------------
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE image/x-icon
+</IfModule>
+
+# ----------------------------------------------------------------------
+# 4. Políticas de Cache
+# ----------------------------------------------------------------------
+
+# Arquivos de Assets com hash no nome (compilados pelo Vite) podem ser cacheados por 1 ano
+<FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
+  Header set Cache-Control "max-age=31536000, public, immutable"
+</FilesMatch>
+
+# Arquivos dinâmicos e index.html nunca devem ser cacheados para garantir atualizações
+<FilesMatch "\.(html|xml|txt|json)$">
+  Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+  Header set Pragma "no-cache"
+  Header set Expires "0"
+</FilesMatch>
