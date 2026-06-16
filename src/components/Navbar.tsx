@@ -46,11 +46,11 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center group">
+        <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center group bg-white px-3 py-1.5 rounded border-2 border-white shadow-md">
           <img 
             src="/sentrix-logo.png" 
             alt="Sentrix Resgate" 
-            className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105"
           />
         </a>
 

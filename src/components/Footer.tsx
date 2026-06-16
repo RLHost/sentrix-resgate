@@ -7,11 +7,11 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center mb-6">
+            <div className="inline-flex items-center mb-6 bg-white px-3 py-1.5 rounded border-2 border-white shadow-md">
               <img 
                 src="/sentrix-logo.png" 
                 alt="Sentrix Resgate" 
-                className="h-12 w-auto object-contain"
+                className="h-10 w-auto object-contain"
               />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
