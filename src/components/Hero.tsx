@@ -7,7 +7,7 @@ export function Hero() {
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img 
-          src="/ambulance-hero.png" 
+          src="/ambulancia-hero.jpg" 
           alt="Ambulância de resgate"
           className="w-full h-full object-cover object-center"
           animate={{
