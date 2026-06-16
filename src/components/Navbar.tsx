@@ -42,15 +42,15 @@ export function Navbar() {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-blue shadow-lg py-3' : 'bg-brand-blue/95 backdrop-blur-sm py-5'}`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-slate-100 py-1 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'}`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center group bg-white px-3 py-1.5 rounded border-2 border-white shadow-md">
+        <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center group">
           <img 
             src="/sentrix-logo.png" 
             alt="Sentrix Resgate" 
-            className="h-8 md:h-10 w-auto object-contain transition-transform group-hover:scale-105"
+            className={`w-auto object-contain transition-all duration-300 group-hover:scale-105 ${isScrolled ? 'h-12 md:h-14' : 'h-16 md:h-20'}`}
           />
         </a>
 
@@ -61,7 +61,7 @@ export function Navbar() {
               key={link.id} 
               href={`#${link.id}`} 
               onClick={(e) => handleNavClick(e, link.id)}
-              className="text-slate-200 hover:text-white font-semibold text-sm uppercase tracking-wide transition-colors"
+              className="text-slate-700 hover:text-brand-blue font-semibold text-sm uppercase tracking-wide transition-colors"
             >
               {link.name}
             </a>
@@ -79,7 +79,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white p-2"
+          className="md:hidden text-slate-800 p-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
@@ -93,7 +93,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-brand-blue border-t border-slate-700 overflow-hidden"
+            className="md:hidden bg-white border-t border-slate-200 overflow-hidden"
           >
             <div className="flex flex-col px-4 py-6 gap-4">
               {navLinks.map((link) => (
@@ -101,7 +101,7 @@ export function Navbar() {
                   key={link.id} 
                   href={`#${link.id}`} 
                   onClick={(e) => handleNavClick(e, link.id)}
-                  className="text-slate-200 text-lg font-bold uppercase tracking-wide py-2 border-b border-slate-700/50"
+                  className="text-slate-700 text-lg font-bold uppercase tracking-wide py-2 border-b border-slate-100"
                 >
                   {link.name}
                 </a>
