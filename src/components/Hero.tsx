@@ -5,11 +5,22 @@ export function Hero() {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       {/* Background Image & Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1587559070757-f7e785b094eb?auto=format&fit=crop&w=1920&q=80" 
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <motion.img 
+          src="/ambulance-hero.png" 
           alt="Ambulância de resgate"
           className="w-full h-full object-cover object-center"
+          animate={{
+            scale: [1, 1.08, 1],
+            x: [0, 15, 0],
+            y: [0, -10, 0]
+          }}
+          transition={{
+            duration: 25,
+            ease: "easeInOut",
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-blue/95 via-brand-blue/80 to-transparent"></div>
         <div className="absolute inset-0 bg-black/30"></div>
