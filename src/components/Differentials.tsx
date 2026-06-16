@@ -24,6 +24,7 @@ export function Differentials() {
               src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80" 
               alt="Equipe médica preparada"
               className="w-full h-auto shadow-2xl border-4 border-brand-blue"
+              loading="lazy"
             />
           </div>
           <div className="lg:w-1/2">

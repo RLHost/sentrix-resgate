@@ -46,14 +46,12 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center gap-2 group">
-          <div className="relative flex items-center justify-center w-10 h-10 bg-brand-red rounded-full overflow-hidden">
-            <HeartPulse className="text-white w-6 h-6 animate-pulse" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-white font-black text-xl tracking-wider uppercase italic leading-none group-hover:text-brand-red transition-colors">Sentrix</span>
-            <span className="text-slate-300 font-bold text-sm tracking-widest uppercase leading-none mt-1">Resgate</span>
-          </div>
+        <a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')} className="flex items-center group">
+          <img 
+            src="/sentrix-logo.png" 
+            alt="Sentrix Resgate" 
+            className="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+          />
         </a>
 
         {/* Desktop Nav */}

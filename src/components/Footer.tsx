@@ -7,14 +7,12 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex items-center justify-center w-10 h-10 bg-brand-red rounded-full">
-                <HeartPulse className="text-white w-6 h-6" />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-black text-xl tracking-wider uppercase italic leading-none">Sentrix</span>
-                <span className="text-slate-300 font-bold text-sm tracking-widest uppercase leading-none mt-1">Resgate</span>
-              </div>
+            <div className="flex items-center mb-6">
+              <img 
+                src="/sentrix-logo.png" 
+                alt="Sentrix Resgate" 
+                className="h-12 w-auto object-contain"
+              />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               Segurança, Agilidade e Cuidado em Todos os Momentos. Especialistas em APH, remoções e cobertura de eventos.
