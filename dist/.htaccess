@@ -62,9 +62,9 @@ Options -Indexes
 # 4. Políticas de Cache
 # ----------------------------------------------------------------------
 
-# Arquivos de Assets com hash no nome (compilados pelo Vite) podem ser cacheados por 1 ano
+# Arquivos de mídia e assets (js, css, imagens, fontes) cacheados por 1 semana (604800 segundos)
 <FilesMatch "\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$">
-  Header set Cache-Control "max-age=31536000, public, immutable"
+  Header set Cache-Control "max-age=604800, public"
 </FilesMatch>
 
 # Arquivos dinâmicos e index.html nunca devem ser cacheados para garantir atualizações
