@@ -1,0 +1,22 @@
+# Sentrix Resgate
+
+> Central de Atendimento e Emergência 24h em Sorocaba e Região.
+> Telefone/WhatsApp: +55 (15) 99781-6257
+> Website Oficial: https://sentrixresgate.com.br/
+
+## Visão Geral
+A Sentrix Resgate é uma empresa de Sorocaba/SP especializada em atendimento pré-hospitalar (APH), remoções médicas de urgência e cobertura médica de eventos. Oferecemos suporte 24 horas com ambulâncias modernas (UTI Móvel e Suporte Básico) e equipe altamente capacitada para garantir segurança, agilidade e compromisso absoluto com a vida.
+
+## Serviços Principais
+
+- **Atendimento Pré-Hospitalar (APH)**: Resposta rápida a emergências médicas com atendimento especializado no local da ocorrência.
+- **Remoção Médica UTI Móvel**: Transporte de pacientes em estado crítico com ambulância de suporte avançado equipada para cuidados intensivos.
+- **Remoção Médica Simples / Suporte Básico**: Transporte seguro e planejado de pacientes que necessitam de cuidados de baixa complexidade.
+- **Cobertura Médica de Eventos**: Equipe médica e ambulâncias de suporte estrategicamente posicionadas em eventos de todos os portes.
+- **Área Protegida para Empresas**: Cobertura de socorro médico emergencial preventiva e corretiva para estabelecimentos.
+
+## Localização e Contato
+- **Cidade**: Sorocaba - SP, Brasil (Atendimento e remoções em Sorocaba e região metropolitana).
+- **Geocoordenadas**: Latitude -23.50167, Longitude -47.45806
+- **Atendimento**: 24 horas por dia, 7 dias por semana.
+- **Contato Comercial & Emergência**: +55 (15) 99781-6257 (WhatsApp)
